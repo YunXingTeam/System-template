@@ -1,0 +1,67 @@
+/* ==================================================
+ * 由 Transition.scss 统一管理全局Transition, Animation
+ * ================================================== */
+
+// Page Turn on Transian Effect
+.turn-on {
+  &-enter {
+    transform: translate3d(100%, 0, 0);
+  }
+  &-leave-to {
+    transform: translate3d(-20%, 0, 0);
+  }
+  &-enter-active, &-leave-active  {
+    transition: transform .4s ease;
+  }
+}
+
+// Page Turn Off Transian Effect
+.turn-off {
+  &-enter {
+    transform: translate3d(-20%, 0, 0);
+  }
+  &-leave-to {
+    transform: translate3d(100%, 0, 0);
+  }
+  &-leave-active {
+    z-index: 2;
+  }
+  &-enter-active, &-leave-active  {
+    transition: transform .4s ease;
+  }
+}
+
+// song list 
+.list-view-enter-active, .list-view-leave-active {
+  transition: transform .5s ease;
+}
+.list-view-enter, .list-view-leave-to{
+  transform: translateY(100%);
+}
+
+// header title switch animation
+.title-enter-active, .title-leave-active {
+  transition-property: opacity, transform;
+  transition-duration: .5s;
+}
+.title-enter, .title-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// Song Ablum Infinite Rotate
+.spin-slow {
+  animation: spin 6s linear infinite;
+}
+.spin {
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

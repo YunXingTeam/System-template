@@ -1,0 +1,144 @@
+// Keep images from scaling beyond the width of their parents.
+@mixin img-responsive($display: block) {
+  display: $display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+// Center element auto
+@mixin center-auto($display: block) {
+  display: $display;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Ellipsis font when text overflow
+@mixin font-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// border-radius
+@mixin br($radius:5px) {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/*flex*/
+@mixin flex {
+  -webkit-box-direction: normal!important;
+  box-sizing: border-box!important;
+  display: -webkit-box!important;
+  display: -webkit-flex!important;
+  display: flex!important;
+}
+
+/*h:水平  v:垂直*/
+@mixin fh {
+  @include flex;
+  -webkit-box-orient: horizontal!important;
+  -webkit-flex-direction: row!important;
+  flex-direction: row!important;
+}
+
+@mixin fv {
+  @include flex;
+  -webkit-box-orient: vertical!important;
+  -webkit-flex-direction: column!important;
+  flex-direction: column!important;
+}
+
+/*相对水平起始对齐*/
+@mixin fh-s {
+  -webkit-box-pack: start!important;
+  -webkit-justify-content: flex-start!important;
+  justify-content: flex-start!important;
+}
+
+/*相对水平居中对齐*/
+@mixin fh-c {
+  -webkit-box-pack: center!important;
+  -webkit-justify-content: center!important;
+  justify-content: center!important;
+}
+
+/*相对水平尾部对齐*/
+@mixin fh-e {
+  -webkit-box-pack: end!important;
+  -webkit-justify-content: flex-end!important;
+  justify-content: flex-end!important;
+}
+
+/*相对水平对齐，空白围绕子元素*/
+@mixin fh-around {
+  -webkit-justify-content: space-around!important;
+  justify-content: space-around!important;
+}
+
+/*相对水平对齐，空白在子元素之间*/
+@mixin fh-between {
+  -webkit-box-pack: justify!important;
+  -webkit-justify-content: space-between!important;
+  justify-content: space-between!important;
+}
+
+/*相对垂直起始对齐*/
+@mixin fv-s {
+  -webkit-box-align: start!important;
+  -webkit-align-items: flex-start!important;
+  align-items: flex-start!important;
+  -webkit-align-content: flex-start!important;
+  align-content: flex-start!important;
+}
+
+/*相对垂直居中对齐*/
+@mixin fv-c {
+  -webkit-box-align: center!important;
+  -webkit-align-items: center!important;
+  align-items: center!important;
+  -webkit-align-content: center!important;
+  align-content: center!important;
+  max-width: 100%!important;
+}
+
+/*相对垂直尾部对齐*/
+@mixin fv-e {
+  -webkit-box-align: end!important;
+  -webkit-align-items: flex-end!important;
+  align-items: flex-end!important;
+  -webkit-align-content: flex-end!important;
+  align-content: flex-end!important;
+}
+
+/*相对垂直对齐，子元素拉伸*/
+@mixin fv-stretch {
+  -webkit-box-align: stretch!important;
+  -webkit-align-items: stretch!important;
+  align-items: stretch!important;
+  -webkit-align-content: stretch!important;
+  align-content: stretch!important;
+}
+
+@mixin ftb-col {
+  -webkit-box-flex: 1!important;
+  -webkit-flex: 1!important;
+  -moz-box-flex: 1!important;
+  -moz-flex: 1!important;
+  -ms-flex: 1!important;
+  flex: 1!important;
+  display: block!important;
+  width: 100%!important;
+}

@@ -1,0 +1,40 @@
+#introduce {
+  .vux-swiper {
+    height: 240px !important;
+  }
+}
+
+#about {
+  .page-content {
+    @include fv;
+    @include fh-between;
+    @include fv-c;
+    .logo {
+      margin-top: 30%;
+      @include fv;
+      @include fh-c;
+      @include fv-c;
+      img {
+        width: 120px;
+        height: 120px;
+      }
+      span {
+        font-size: 16px;
+        color: #222222;
+      }
+    }
+  }
+}
+
+#score {
+  .activity-banner {
+    width: 100%;
+    height: 50vw;
+  }
+  .title {
+    @include fh;
+    @include fh-s;
+    @include fv-c;
+    padding-left: 8px;
+  }
+}

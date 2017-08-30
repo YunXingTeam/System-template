@@ -1,0 +1,396 @@
+.larger-header {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  //background-image: url("../static/img/me_bg.png");
+  line-height: normal;
+  position: relative;
+  padding: 0 8px;
+  &.login {
+    //background-image: url(../static/img/profile_bg_02.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 5px;
+    .name {
+      font-size: 18px;
+      color: white;
+    }
+    .dwmc {
+      font-size: 14px;
+      color: white;
+    }
+    .qd {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 60px;
+      height: 30px;
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+  .larger-header-button {
+    z-index: 99;
+    height: 35px;
+    min-width: 35px;
+    &.is-right {
+      margin-right: -5px;
+    }
+    img {
+      width: 22px;
+    }
+    button {
+      border: none;
+      background: none;
+      padding: 0;
+      height: 100%;
+      @include fh;
+      @include fh-c;
+      @include fv-c;
+      &:after {
+        border: none;
+      }
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
+  .larger-header-title {
+    -webkit-box-direction: normal;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    line-height: normal;
+    height: 21px;
+    .info {
+      line-height: 1.4;
+      padding-bottom: 20px;
+      font-size: 16px;
+    }
+  }
+  .is-right {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+  }
+  .is-left {
+    position: absolute;
+    top: 2px;
+    left: 8px;
+  }
+}
+
+.larger-header.height {
+  min-height: 220px;
+  .larger-header-title {
+    padding-top: 30px;
+    line-height: normal;
+    height: 100%;
+    color: white;
+    text-align: center;
+    @include fv;
+    @include fh-c;
+    @include fv-stretch;
+    img {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+    input {
+      padding: 8px;
+      height: 44px;
+      background-color: white;
+      border-style: none;
+      width: 100%;
+      &:first-of-type {
+        border-bottom: #e7e7e7 1px solid;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important
+      }
+      &:last-of-type {
+        border-bottom-left-radius: 8px !important;
+        border-bottom-right-radius: 8px !important
+      }
+    }
+
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 14px !important;
+    }
+  }
+}
+
+.vux-header {
+  z-index: 999;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+  position: fixed !important;
+  color: white;
+  width: 100%;
+  .vux-header-title {
+    color: white !important;
+  }
+  .vux-header-right {
+    a {
+      color: white !important;
+    }
+  }
+  .stf-select {
+    top: -7px;
+    background-color: transparent;
+    width: 130px !important;
+    .stf-select__inner-wrapper {
+      background-color: transparent;
+      padding: 0;
+    }
+    .stf-select__value {
+      text-align: right;
+    }
+  }
+  .left-arrow {
+    &:before {
+      border-color: white !important;
+    }
+  }
+}
+
+.searchBar {
+  & > div {
+    @include fh;
+    @include fh-s;
+    @include fv-c;
+    padding: 10px;
+    height: 47px;
+    color: $gray-base-font;
+    font-size: 14px;
+    background-color: rgb(242, 242, 242);
+    background-clip: content-box;
+  }
+  background-color: white;
+  position: fixed;
+  top: 46px;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  input {
+    display: block;
+    padding: 0 60px 0 8px;
+    height: 34px;
+    line-height: 18px;
+    color: #111;
+    vertical-align: middle;
+    background-color: transparent;
+    z-index: 2;
+    border-radius: 6px;
+    border: none;
+    @include ftb-col;
+  }
+  .more {
+    position: absolute;
+    right: 18px;
+    float: right;
+    @include font-ellipsis
+  }
+  .vux-x-icon {
+    fill: $gray-base-font;
+  }
+  .placeholder {
+    position: absolute;
+    left: 45%;
+    @include fh;
+    @include fh-c;
+    @include fv-c;
+    span {
+      @include font-ellipsis
+    }
+  }
+}
+
+.introduce-bar {
+  @include fh;
+  width: 100%;
+  padding: 10px 0;
+  .item {
+    @include ftb-col;
+    @include fv;
+    @include fh-c;
+    @include fv-stretch;
+    text-align: center;
+    span {
+      line-height: 20px;
+      font-size: 14px;
+      &:first-of-type {
+        font-size: 18px;
+        &.qy {
+          color: #01aaf5;
+        }
+        &.mz {
+          color: #58b968;
+        }
+        &.zy {
+          color: #f15f88;
+        }
+      }
+      &.btn {
+        box-shadow: -2px 2px 2px rgba(173, 191, 199, 0.4);
+        border: 1px solid rgba(173, 191, 199, 0.4);
+        color: #31c2fe;
+        border-radius: 12px;
+        margin: 0 15px;
+        min-height: 24px;
+      }
+    }
+  }
+}
+
+.bottom-bar {
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  padding: 0 15px;
+  @include fh;
+  @include fh-between;
+  @include fv-c;
+  button {
+    height: 30px;
+    border: 1px solid $primary-active;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    padding: 5px;
+    color: $primary-active;
+    min-width: 80px;
+  }
+}
+
+.autosize-row {
+  @include fh;
+  width: 100%;
+  .item {
+    @include ftb-col;
+    text-align: center;
+    border: none;
+  }
+  .add-pic {
+    @include fv;
+    @include fh-c;
+    @include fv-c;
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
+    background: transparent;
+    margin: 0 1%;
+    border: 1px dashed $base-line-color;
+    color: $gray-base-font;
+    .vux-x-icon {
+      fill: #fff;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+  img {
+    width: 85px;
+    height: 85px;
+    margin: 0 1%;
+  }
+  button:not(.vux-swipeout-button) {
+    @include ftb-col;
+    text-align: center;
+    background-color: $primary-base;
+    color: white;
+    border: none;
+    border-right: 1px solid white;
+    min-height: 35px;
+    &:active {
+      background-color: $primary-active;
+    }
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+}
+
+.btn-bar {
+  @include fh;
+  @include fv-c;
+  button {
+    @include ftb-col;
+    text-align: center;
+    background-color: $primary-base;
+    color: white;
+    border: none;
+    border-right: 1px solid white;
+    min-height: 35px;
+    &:active {
+      background-color: $primary-active;
+    }
+    &:last-of-type {
+      border-right: none;
+    }
+  }
+}
+
+.record-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background-color: #f8f8f8;
+  padding-right: 15px;
+  z-index: 1000;
+  @include fh;
+  @include fh-s;
+  @include fv-c;
+  .icon {
+    @include fh;
+    @include fh-c;
+    @include fv-c;
+    width: 45px;
+    height: 45px;
+    .vux-x-icon {
+      fill: $gray-base-font;
+    }
+  }
+  button {
+    height: 34px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    padding: 5px;
+    color: #555555;
+    z-index: 1000;
+    &:first-of-type {
+      @include ftb-col;
+    }
+    &:last-of-type {
+      width: 100px;
+      margin-left: 15px;
+    }
+    &:disabled {
+      color: $gray-line-default;
+    }
+  }
+}

@@ -1,0 +1,264 @@
+.v-scroll {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+  background-color: white;
+  height: 107px;
+  width: 100%;
+  padding-bottom: 6px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .v-scroll-item {
+    height: 107px;
+    width: 100px;
+    display: inline-block;
+    background-color: white;
+    vertical-align: middle;
+    margin: 0 2px;
+    position: relative;
+    img {
+      position: absolute;
+      left: 50%;
+      width: 45px;
+      height: 45px;
+      border-radius: 22.5px;
+      top: 10px;
+      margin-left: -22.5px;
+    }
+    .label {
+      font-size: 11px;
+      line-height: 14px;
+      color: #555;
+      position: absolute;
+      left: 50%;
+      width: 100px;
+      margin-left: -50px;
+      top: 60px;
+      text-align: center;
+      span:first-of-type {
+        font-size: 17px;
+        padding: 5px;
+        display: block;
+        color: black;
+      }
+      span:last-of-type {
+        display: block;
+        padding: 0 5px 5px;
+        font-size: 12px;
+        height: 50%;
+        word-break: break-all;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #888888;
+      }
+    }
+  }
+  .v-scroll-item:last-child {
+    margin-right: 5px;
+  }
+}
+
+.cardClick {
+  margin: 0 !important;
+  padding-bottom: 6px;
+  .ttLine {
+    position: relative;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 14px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background: $primary-active;
+      top: 0;
+      left: 0;
+      margin-left: 8px;
+    }
+  }
+  .title {
+    position: relative;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  &:active {
+    background-color: white;
+  }
+  &:after {
+    border-bottom: none !important;
+  }
+  .weui-cell {
+    &.vux-tap-active:active {
+      background-color: transparent;
+    }
+  }
+
+  .weui-panel__hd {
+    div {
+      @include fh;
+      @include fh-between;
+      @include fv-c;
+    }
+    &:after {
+      border-bottom: none;
+    }
+  }
+
+  .weui-cells {
+    margin: 0;
+    padding-bottom: 8px;
+    &:before {
+      border-top: none;
+    }
+    .weui-cell {
+      .weui-cell__ft {
+        font-size: 16px;
+      }
+      .vux-label {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      &:before {
+        border-top: none;
+      }
+    }
+    .vux-cell-box {
+      padding: 0;
+    }
+  }
+  & + .cardClick {
+    margin-top: 6px !important;
+  }
+}
+
+.vux-card-content {
+  .cardClick {
+    margin-top: 0 !important;
+    padding: 0 8px 8px;
+  }
+  #hosList {
+    height: 500px;
+    padding-bottom: $bottom-height;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+#income, #ksIncome {
+  .ks-income-item {
+    position: relative;
+    padding: 0 0 12px;
+    .vux-no-group-title {
+      @include fv;
+      @include fh-around;
+      @include fv-stretch;
+      margin-top: 0;
+      padding: 15px;
+    }
+    .rank {
+      content: '';
+      //background: url(../static/img/ico_label.png) no-repeat 0 center;
+      background-size: 32px 32px;
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 0;
+      right: 8px;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+    }
+    .name {
+      font-size: 18px;
+      color: black;
+      line-height: 28px;
+    }
+    .item-info {
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+      font-size: 14px;
+      color: #999;
+      line-height: 24px;
+      span {
+        padding-right: 12px;
+      }
+    }
+    .icon {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 60%;
+      right: 8px;
+      transform: translateY(-50%);
+      .vux-x-icon {
+        fill: $gray-light-font;
+      }
+    }
+  }
+}
+
+.detail-box {
+  .case-item, .weui-cells {
+    background-color: #f9f9f9 !important;
+  }
+}
+
+#score-list {
+  height: calc(100% - 340px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-left: 15px;
+  .vux-no-group-title {
+    padding: 0;
+    &:after {
+      border: none;
+    }
+  }
+  .score-item {
+    & > div {
+      width: 100%;
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+    }
+    .score-time {
+      width: 20%;
+      font-size: 12px;
+      color: #a5a5a5;
+    }
+    .score-icon {
+      padding: 15px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    .score-info {
+      @include fv;
+      @include fh-between;
+      @include fv-stretch;
+      width: 60%;
+      span {
+        &:first-of-type {
+          font-size: 18px;
+          color: #222222;
+          font-weight: 400
+        }
+        &:last-of-type {
+          font-size: 14px;
+          color: #666666;
+        }
+      }
+    }
+  }
+}
+

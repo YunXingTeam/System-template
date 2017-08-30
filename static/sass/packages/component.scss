@@ -1,0 +1,417 @@
+#tags-select {
+  position: absolute;
+  z-index: 1000;
+  top: 45px;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+  transition: all 200ms ease-in-out;
+  .header {
+    @include fh;
+    @include fh-s;
+    @include fv-c;
+    font-size: 14px;
+    padding: 0 15px;
+    span {
+      @include ftb-col;
+      display: block;
+    }
+    button {
+      font-size: 14px;
+      border: 1px solid $gray-minor;
+      width: 60px;
+      height: 25px;
+      background-color: white;
+      border-radius: 5px;
+    }
+    height: 45px;
+    background-color: white;
+  }
+  .body {
+    padding: 10px 15px;
+    height: calc(100% - 95px);
+    .ks-list {
+      width: 33%;
+      float: left;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .weui-cells_radio {
+        background-color: #f2f8fa;
+        &:before {
+          border: none;
+        }
+        &:after {
+          border: none;
+        }
+      }
+      .weui-check__label {
+        min-height: 44px;
+        padding: 0;
+        &:before {
+          border: none;
+        }
+        &:after {
+          border: none;
+        }
+        .weui-cell__bd {
+          .item {
+            text-align: center;
+            font-size: 14px;
+            @include fv;
+            @include fh-c;
+            @include fv-c;
+            height: 44px;
+            width: 100%;
+            border-right: 1px solid $primary-active;
+            &.checked {
+              background-color: white;
+              border-bottom: 1px solid $primary-active;
+              border-right: none;
+              border-top: none;
+              color: $primary-active;
+            }
+          }
+        }
+        &:not(:first-of-type) {
+          .weui-cell__bd {
+            .item {
+              &.checked {
+                border-top: 1px solid $primary-active;
+              }
+            }
+          }
+        }
+        &:last-of-type {
+          .weui-cell__bd {
+            .item {
+              &.checked {
+                border-top: 1px solid $primary-active;
+                border-bottom: none;
+              }
+            }
+          }
+        }
+        .weui-cell__ft {
+          width: 0;
+          height: 0;
+          padding: 0;
+          .weui-icon-checked {
+            &:before {
+              display: none;
+              width: 0;
+              height: 0;
+            }
+          }
+        }
+      }
+      .foot {
+        background-color: #f2f8fa;
+        border-right: 1px solid $primary-active;
+      }
+    }
+    .tag-list {
+      width: 67%;
+      float: right;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      .weui-cells_checkbox {
+        &:before {
+          border: none;
+        }
+        &:after {
+          border: none;
+        }
+        .weui-check_label {
+          @include fh;
+          @include fh-s;
+          @include fv-c;
+          height: 44px;
+          .weui-cell__hd {
+            @include fh;
+            @include fh-c;
+            @include fv-c;
+            .vux-checklist-icon-checked {
+              &:before {
+                font-size: 16px;
+              }
+            }
+          }
+          .weui-cell__bd {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#pat-edit, #account-dialog {
+  position: absolute;
+  z-index: 501;
+  top: 47px;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+  transition: all 200ms ease-in-out;
+  .btn-bar {
+    position: fixed;
+    height: 45px;
+    background-color: $primary-active;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    button {
+      background-color: transparent;
+    }
+  }
+  .weui-cell__hd {
+    width: auto !important;
+  }
+}
+
+#account-dialog {
+  top: 45px;
+  .title {
+    height: 45px;
+    background-color: $primary-base;
+  }
+}
+
+#case-review {
+  position: absolute;
+  z-index: 501;
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+  transition: all 200ms ease-in-out;
+  padding: 62px 15px 60px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @include fv;
+  @include fh-s;
+  @include fv-stretch;
+  .header {
+    height: 50px;
+    border-bottom: 1px dashed $gray-line-default;
+    background-color: white;
+    padding: 15px;
+  }
+  .item {
+    padding: 18px 22px;
+    background-color: white;
+    position: relative;
+    &:not(:first-of-type):before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: 13px solid #f1f1f1;
+      border-right: 16px solid white;
+    }
+    .title {
+      position: absolute;
+      top: 0;
+      left: 22px;
+      line-height: 14px;
+      font-size: 12px;
+      color: $gray-base-font;
+      display: block;
+    }
+    .v-info {
+      @include fv;
+      @include fh-s;
+      @include fv-stretch;
+    }
+    .h-info {
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+    }
+    .info {
+      @include ftb-col;
+      font-size: 12px;
+      line-height: 22px;
+      color: #444;
+      span {
+        color: $gray-minor;
+      }
+    }
+    img {
+      width: calc(33% - 10px);
+      height: calc(33vw - 17px);
+      margin: 10px 4px 0;
+      border: 1px solid $gray-line-default;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.vue-audio-wrapper {
+  padding-left: 12px;
+  position: relative;
+  margin-top: 10px;
+  font-size: 14.0px;
+  @include fh;
+  @include fh-s;
+  @include fv-c;
+  &:before {
+    content: '';
+    display: block;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
+    border-right: 12px solid #bdefff;
+    position: absolute;
+    left: 0;
+    background-color: #bdefff;
+  }
+  .vue-audio__player {
+    @include fh;
+    @include fh-e;
+    @include fv-c;
+    background-color: #bdefff;
+    border-color: #87e2ff;
+    height: 35px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    .voice {
+      width: 20px !important;
+      height: 20px !important;
+      margin: 0 !important;
+      border: none !important;
+    }
+    .vux-spinner {
+      stroke: $gray-minor;
+    }
+    .duration {
+      @include ftb-col;
+      text-align: right;
+    }
+  }
+  .vue-audio__total {
+    padding-left: 10px;
+  }
+}
+
+.lg-preview-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  .lg-preview-loading {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    left: 50%;
+    margin-left: -17.5px;
+  }
+  .lg-preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .lg-preview-nav-left {
+    left: 0;
+  }
+  .lg-preview-nav-right {
+    right: 0;
+  }
+  .lg-preview-nav-left,
+  .lg-preview-nav-right {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    top: 0;
+    @include fv;
+    @include fh-c;
+    @include fv-c;
+    .vux-x-icon {
+      fill: $gray-minor;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .lg-preview-title {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    height: 2rem;
+    line-height: 2rem;
+  }
+}
+
+.progress {
+  margin: 0 0 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  background: #ddd;
+  border-radius: 5px;
+  text-align: right;
+  &.has-popup {
+    margin-top: 30px;
+  }
+
+  .progress-bar {
+    width: 0;
+    height: 20px;
+    background: #09b885;
+    position: static;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    z-index: 11;
+    color: white;
+    font-size: 14px;
+    @include fh;
+    @include fh-e;
+    @include fv-c;
+    &:after {
+      position: absolute;
+      content: attr(data-zs);
+      right: 14px;
+      color: darkgray;
+      z-index: 10;
+    }
+  }
+
+  .progress-popup {
+    position: absolute;
+    height: 20px;
+    width: 42px;
+    padding: 0 2px;
+    background: #09b885;
+    bottom: 58px;
+    text-align: center;
+    border-radius: 3px;
+    color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    left: 0;
+  }
+}
+
+
+

@@ -1,0 +1,768 @@
+/* =======================================
+ *			主题部分CSS
+ *	未来将考虑增加主题切换功能，在这里提前做点准备
+ * ======================================= */
+.page {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  .page-content {
+    position: absolute;
+    padding-top: $header-height;
+    //margin-bottom: $bottom-height;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    overflow: auto;
+    .line {
+      height: 1px;
+      background-color: $base-line-color;
+      margin-left: 15px;
+      display: block;
+    }
+    &.vertical {
+      @include fv;
+      @include fh-s;
+      @include fv-stretch;
+    }
+  }
+  .content-green {
+    background-color: $primary-base;
+    color: $white-base;
+  }
+}
+
+input {
+  -webkit-user-select: auto !important;
+}
+
+.echarts {
+  width: 100%;
+  height: 240px;
+}
+
+.pagePB {
+  padding-bottom: $bottom-height;
+}
+
+.main-title {
+  padding: 15px 0;
+  font-size: 25px;
+  display: block;
+  font-weight: bold;
+}
+
+.sub-title {
+  padding-bottom: 10px;
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+}
+
+.small-title {
+  font-size: 14px;
+  display: block;
+  font-weight: bold;
+}
+
+.no-link:-webkit-any-link {
+  color: #777777;
+  text-decoration: none;
+}
+
+.big-btn {
+  width: 100%;
+  background-color: white;
+  @include br;
+  padding: 25px 0;
+  margin-top: 20px;
+  text-align: center;
+  div {
+    &:first-of-type {
+      color: #08B885;
+      line-height: 1.7;
+      font-size: 20px;
+    }
+    &:last-of-type {
+      color: #4a4a4a;
+      line-height: 1.4;
+      font-size: 16px;
+    }
+  }
+  img {
+    width: 60px;
+  }
+}
+
+.home_grid {
+  height: auto;
+  .weui-grid {
+    @include fv;
+    @include fh-c;
+    @include fv-c;
+    padding: 20px 0;
+    position: relative;
+    .weui-grid__icon {
+      width: 70px;
+      height: 70px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .weui-grid__label {
+      @include ftb-col;
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+}
+
+.dialog-account {
+  background-color: white;
+  padding: 0 16px 12px;
+  input {
+    background-color: #f3f3f3;
+    color: #777777;
+    border-radius: 22px;
+    padding: 0 22px;
+    height: 40px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+    font-size: 16px;
+    line-height: 45px;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .type-box {
+    display: block;
+    @include fv;
+    @include fh-s;
+    @include fv-stretch;
+  }
+  .input-box {
+    @include fh;
+    @include fh-s;
+    @include fv-c;
+    background-color: #f3f3f3;
+    border-radius: 22px;
+    margin-top: 16px;
+    padding-right: 12px;
+    input {
+      margin: 0;
+      background-color: transparent;
+    }
+    button {
+      margin: 0;
+      height: 40px;
+      width: 40px;
+      background-color: transparent;
+      color: $primary-base;
+    }
+  }
+  .select-box {
+    @include fh;
+    @include fh-around;
+    @include fv-c;
+    background-color: #f3f3f3;
+    border-radius: 22px;
+    margin-top: 16px;
+    height: 40px;
+    span {
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+  .vux-checker-box {
+    @include fh;
+    @include fh-around;
+    @include fv-c;
+    .select-item {
+      position: relative;
+      padding: 0 12px 0 36px;
+      line-height: 28px;
+      height: 30px;
+      text-align: center;
+      font-size: 16px;
+      margin-right: 6px;
+    }
+    .select-item:before {
+      content: ' ';
+      position: absolute;
+      left: 8px;
+      top: 4px;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      background-color: #f3f3f3;
+      border: 1px solid #d3d3d3;
+    }
+    .select-item:after {
+      content: ' ';
+      position: absolute;
+      left: 12px;
+      top: 8px;
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 14px;
+      background-color: #d3d3d3;
+    }
+    .select-item-selected:before {
+      border-color: $primary-base;
+    }
+    .select-item-selected:after {
+      background-color: $primary-base;
+    }
+  }
+  button {
+    display: block;
+    background-color: $primary-base;
+    color: white;
+    margin-top: 16px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 22px;
+    font-size: 16px;
+    line-height: 35px;
+  }
+  span {
+    display: block;
+    font-size: 14px;
+    margin: 10px 0 0;
+  }
+}
+
+.vux-toast {
+  .vux-toast-bottom {
+    bottom: 55px !important;
+  }
+  .weui-toast__content {
+    padding: 10px;
+  }
+}
+
+.vux-table {
+  font-size: 14px;
+  th {
+    line-height: 30px;
+  }
+  td {
+    line-height: 30px;
+  }
+}
+
+.weui-mask_transparent {
+  z-index: 999;
+}
+
+.stf-select {
+  background-color: transparent;
+  .stf-select__inner-wrapper {
+    background-color: transparent;
+    .stf-select__options {
+      z-index: 999;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3);
+      max-height: 200px;
+    }
+  }
+  .btn-bar {
+    height: 100%;
+  }
+}
+
+.stf-select_opened {
+  .stf-select__inner-wrapper {
+    z-index: 999;
+  }
+  .stf-select-options {
+    z-index: 999;
+    border-top: none;
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.weui-loading_toast {
+  .weui-toast {
+    width: 5.6rem;
+    min-height: 5.6rem;
+  }
+}
+
+.sign-in-btn {
+  border: 1px solid black !important;
+  background-color: lightcyan !important;
+  border-radius: 8px;
+  color: black !important;
+  min-height: 30px !important;
+}
+
+.send-all {
+  @include fh;
+  @include fh-s;
+  @include fv-c;
+  font-size: 12px;
+  height: 45px;
+  padding: 0 15px;
+  color: $gray-base-font;
+  background-color: white;
+  span {
+    font-size: 14px;
+    padding-right: 8px;
+    color: #777777;
+  }
+}
+
+.backBtn {
+  z-index: 9;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin: 3px;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  border-radius: 0;
+  border: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.vux-popup-show {
+  z-index: 9999 !important;
+}
+
+.vux-popup-picker {
+  z-index: 10000 !important;
+}
+
+.dp-right {
+  color: $primary-active !important;
+}
+
+.checker-default {
+  color: $gray-base-font;
+  padding-left: 40px;
+  position: relative;
+  line-height: 30px;
+  @include fh;
+  @include fh-s;
+  @include fv-c;
+  transition: color 500ms ease;
+  &:before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 11px;
+    top: 50%;
+    margin-top: -10px;
+    border-radius: 50%;
+    background-color: white;
+    display: block;
+    content: '';
+    border: 2px solid $gray-light;
+    transition: border 300ms ease;
+  }
+  &:after {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 15px;
+    top: 50%;
+    margin-top: -6px;
+    border-radius: 50%;
+    background-color: $gray-light;
+    transition: background-color 300ms ease;
+    display: block;
+    content: '';
+  }
+  &.checker-selected {
+    color: $primary-active;
+    &:before {
+      border: 2px solid $primary-active !important;
+    }
+    &:after {
+      background-color: $primary-active !important;
+    }
+  }
+  &.vux-tap-active {
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.input-cell-box {
+  & > div {
+    padding-right: 0 !important;
+    @include fh;
+    @include fh-s;
+    @include fv-c;
+    width: 100%;
+  }
+  @include ftb-col;
+  .input-cell {
+    @include ftb-col;
+    @include fh;
+    @include fh-s;
+    @include fv-s;
+    padding: 0 0 0 15px;
+    .label {
+      display: block;
+      font-size: 14px !important;
+      line-height: 24px;
+      padding: 10px 0;
+      width: auto;
+    }
+    .input-wrapper {
+      @include ftb-col;
+      @include fh;
+      @include fh-e;
+      @include fv-c;
+      padding: 8px 15px 8px 8px;
+      border: none;
+      min-height: 45px;
+      &.has-arrow {
+        padding: 8px 40px 8px 8px;
+      }
+      input {
+        font-size: 14px;
+        line-height: 28px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+        border: none;
+        &::-webkit-input-placeholder {
+          font-size: 14px;
+          color: $gray-base-font;
+        }
+      }
+      span {
+        font-size: 14px;
+        line-height: 28px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: right;
+      }
+      img {
+        width: 29px;
+        height: 29px;
+        border-radius: 50%;
+      }
+      .stf-select {
+        @include ftb-col;
+        background-color: $gray-light;
+        margin: 0 2px;
+        height: 28px;
+      }
+      .autosize-row {
+        width: 100%;
+      }
+      button {
+        height: 28px;
+        background-color: $primary-active;
+        border: none;
+        color: white;
+        min-width: 50px;
+        border-radius: 3px;
+        margin-left: 8px;
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .vux-x-icon {
+    fill: $gray-minor;
+    position: absolute;
+    right: 8px;
+  }
+}
+
+.vux-x-textarea {
+  .weui-label {
+    font-size: 14px !important;
+    padding: 10px 0;
+  }
+  padding: 0 15px 10px !important;
+  .weui-cell__bd {
+    padding: 10px 0 0;
+    textarea {
+      font-size: 14px;
+      min-height: 150px;
+      line-height: 24px;
+      &::-webkit-input-placeholder {
+        font-size: 14px;
+        color: $gray-base-font;
+      }
+    }
+  }
+  .weui-textarea-counter {
+    font-size: 14px;
+  }
+}
+
+.vux-popup-picker-value, .vux-popup-picker-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.weui-label {
+  display: block;
+  font-size: 14px !important;
+  line-height: 24px;
+  width: auto;
+}
+
+.weui-dialog__hd {
+  padding: 15px;
+  * {
+    font-size: 18px !important;
+  }
+}
+
+.weui-dialog__ft {
+  padding: 8px 15px !important;
+  line-height: 32px !important;
+  .weui-dialog__btn {
+    font-size: 14px !important;
+    padding: 0 15px;
+    line-height: 32px;
+  }
+}
+
+.weui-dialog__bd {
+  max-height: 400px;
+  padding: 0.25em 1.6em !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 14px !important;
+}
+
+.ra {
+  border-radius: .5rem !important;
+}
+
+.rtl {
+  border-top-left-radius: .5rem !important;
+}
+
+.rtr {
+  border-top-right-radius: .5rem !important;
+}
+
+.rbl {
+  border-bottom-left-radius: .5rem !important;
+}
+
+.rbr {
+  border-bottom-right-radius: .5rem !important;
+}
+
+.ba {
+  border: 1px solid $base-line-color !important;;
+  margin: -1px 0 !important;;
+}
+
+.bl {
+  border-left: 1px solid $base-line-color !important;
+}
+
+.bt {
+  border-top: 1px solid $base-line-color !important;
+}
+
+.br {
+  border-right: 1px solid $base-line-color !important;
+}
+
+.bb {
+  border-bottom: 1px solid $base-line-color !important;
+}
+
+.pa {
+  padding: 10px !important;
+}
+
+.pl {
+  padding-left: 10px !important;
+}
+
+.pt {
+  padding-top: 10px !important;
+}
+
+.pr {
+  padding-right: 10px !important;
+}
+
+.pb {
+  padding-bottom: 10px !important;
+}
+
+.no-b {
+  &:before {
+    border: none !important;
+  }
+  &:after {
+    border: none !important;
+  }
+  *:not(.vue-audio-wrapper) {
+    &:before {
+      border: none !important;
+    }
+    &:after {
+      border: none !important;
+    }
+  }
+}
+
+.no-pl {
+  padding-left: 0 !important;
+}
+
+.no-pt {
+  padding-top: 0 !important;
+}
+
+.no-pr {
+  padding-right: 0 !important;
+}
+
+.no-pb {
+  padding-bottom: 0 !important;
+}
+
+.no-ml {
+  margin-left: 0 !important;
+}
+
+.no-mt {
+  margin-top: 0 !important;
+}
+
+.no-mr {
+  margin-right: 0 !important;
+}
+
+.no-mb {
+  margin-bottom: 0 !important;
+}
+
+.no-bt {
+  border-top: none !important;
+}
+
+.no-br {
+  border-right: none !important;
+}
+
+.no-bb {
+  border-bottom: none !important;
+}
+
+.no-bl {
+  border-left: none !important;
+}
+
+.ma {
+  margin: 10px !important;
+}
+
+.ml {
+  margin-left: 10px !important;
+}
+
+.mt {
+  margin-top: 10px !important;
+}
+
+.mr {
+  margin-right: 10px !important;
+}
+
+.mb {
+  margin-bottom: 10px !important;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 200ms
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active 在 <2.1.8 中 */
+{
+  opacity: 0
+}
+
+.Router {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100% 0);
+}
+
+.slide-up-enter,
+.slide-down-leave-active {
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+
+.slide-up-leave-active,
+.slide-down-enter {
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+
+.qd {
+  border: none;
+  background-color: white;
+  color: $primary-active;
+  &:disabled {
+    opacity: 0.5;
+  }
+}

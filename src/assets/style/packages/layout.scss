@@ -1,0 +1,179 @@
+.main-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include clearfix;
+  @include fv;
+  @include fh-s;
+  @include fv-stretch;
+  height: 100%;
+  width: 100%;
+  .nav-wrapper {
+    @include fh;
+    @include fh-between;
+    @include fv-c;
+    min-height: 3.75rem;
+    padding: .125rem 2rem .125rem .125rem;
+    background-color: $white-base;
+    z-index: 999;
+    .profile-wrapper {
+      @include transition(all, .35s);
+      width: 15.9375rem;
+      min-height: 3.75rem;
+      padding: 0 1rem;
+      background-color: $white-base;
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+      .logo {
+        @include transition(all, .35s);
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 1rem;
+      }
+      .title {
+        @include auto-full;
+        @include font-ellipsis;
+        @include transition(all, .2s);
+        opacity: 1;
+      }
+    }
+    .hamburger-wrapper {
+      width: 3.125rem;
+      height: 3.125rem;
+      position: relative;
+      button {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+      .fa-icon {
+        width: 100%;
+        height: 100%;
+        padding: .75rem;
+      }
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        left: 0;
+        top: 50%;
+        height: 1.75rem;
+        width: 1px;
+        background-color: $base-line-color;
+        transform: translateY(-50%);
+      }
+
+    }
+    .breadcrumb-wrapper {
+      @include auto-full;
+    }
+    .nav-menu-wrapper {
+    }
+    .avatar-wrapper {
+      min-width: 2.5rem;
+      height: 2.5rem;
+      padding-left: 1rem;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .main-container {
+    @include fh;
+    @include fh-s;
+    @include fv-stretch;
+    height: 100%;
+    z-index: 99;
+    .drawer-wrapper {
+      @include transition(width, .3s);
+      height: 100%;
+      .drawer-menu {
+        @include transition(all, .35s);
+        padding: 1rem;
+        min-width: 3.5rem;
+        height: calc(100% - 3.75rem);
+        .banner {
+          height: 7.8125rem;
+          animation: anim-show .2s;
+          -webkit-animation: anim-show .2s;
+          animation-fill-mode: forwards;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .banner + .menu-wrapper {
+          padding: .5rem 0
+        }
+      }
+
+      &.collapse {
+        width: 3.5rem;
+      }
+
+      &:not(.collapse) {
+        width: 15.9375rem;
+      }
+    }
+
+    .route-wrapper {
+      @include auto-full;
+      background-color: $white-base;
+      z-index: 1;
+      padding: 1.25rem 0 0 2.875rem;
+    }
+  }
+}
+
+.collapse {
+  .logo {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    margin: 0 !important;
+  }
+  .drawer-menu {
+    padding: 0 !important;
+    .banner {
+      animation: anim-hide .2s !important;
+      -webkit-animation: anim-hide .2s !important;
+      animation-fill-mode: forwards !important;
+    }
+    .menu-wrapper {
+      &.vertical {
+        padding: 0 !important;
+        .menu-item {
+          &.divider {
+            height: 1px !important;
+          }
+          .title {
+            opacity: 0 !important;
+            width: 0;
+          }
+          .badge {
+            position: absolute;
+            right: .5rem;
+            top: -.25rem;
+            &.dot {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .profile-wrapper {
+    width: 3.5rem !important;
+    .title {
+      opacity: 0 !important;
+      width: 0;
+    }
+  }
+}
