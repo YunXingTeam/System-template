@@ -9,7 +9,7 @@ import * as Api from './api'
 import EazyPush from './plugins/easyPush'
 import ImgPreview from './plugins/imgPreview'
 import Utils from './plugins/utils'
-Vue.use(EazyPush, 'BC-eb034a9fd81e4abfb08be26a23aaaeaf')
+Vue.use(EazyPush, '')
 Vue.use(ImgPreview)
 Vue.use(Utils)
 /*三方库*/
