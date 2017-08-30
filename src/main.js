@@ -6,10 +6,10 @@ Vue.config.productionTip = false
 import store from './store'
 import router from './router'
 import * as Api from './api'
-import EazyPush from './plugins/easyPush'
+//import EazyPush from './plugins/easyPush'
 import ImgPreview from './plugins/imgPreview'
 import Utils from './plugins/utils'
-Vue.use(EazyPush, '')
+//Vue.use(EazyPush, '')
 Vue.use(ImgPreview)
 Vue.use(Utils)
 /*三方库*/
