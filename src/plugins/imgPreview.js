@@ -3,7 +3,7 @@
  */
 import imgPreview from '../components/img-preview.vue'
 import * as Api from '../api'
-import empty from '../../static/img/icon_empty.png'
+import empty from '../../static/img/img_empty.png'
 
 export default {
   install: function (Vue, options) {

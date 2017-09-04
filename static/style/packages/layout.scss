@@ -1,0 +1,276 @@
+.main-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include clearfix;
+  @include fv;
+  @include fh-s;
+  @include fv-stretch;
+  height: 100%;
+  width: 100%;
+  .nav-wrapper {
+    @include fh;
+    @include fh-between;
+    @include fv-c;
+    min-height: 3.75rem;
+    padding: .125rem 2rem .125rem .125rem;
+    background-color: $white-base;
+    z-index: 999;
+    .profile-wrapper {
+      @include transition(all, .35s);
+      width: 15.9375rem;
+      min-height: 3.75rem;
+      padding: 0 1rem;
+      background-color: $white-base;
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+      .logo {
+        @include transition(all, .35s);
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 1rem;
+      }
+      .title {
+        @include auto-full;
+        @include font-ellipsis;
+        @include transition(all, .2s);
+        opacity: 1;
+      }
+    }
+    .hamburger-wrapper {
+      width: 3.125rem;
+      height: 3.125rem;
+      position: relative;
+      button {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+      .fa-icon {
+        width: 100%;
+        height: 100%;
+        padding: .75rem;
+      }
+      &:before {
+        position: absolute;
+        display: block;
+        content: '';
+        left: 0;
+        top: 50%;
+        height: 1.75rem;
+        width: 1px;
+        background-color: $base-line-color;
+        transform: translateY(-50%);
+      }
+
+    }
+    .breadcrumb-wrapper {
+      @include auto-full;
+    }
+    .nav-menu-wrapper {
+    }
+    .avatar-wrapper {
+      min-width: 2.5rem;
+      height: 2.5rem;
+      padding-left: 1rem;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .main-container {
+    @include fh;
+    @include fh-s;
+    @include fv-stretch;
+    height: 100%;
+    z-index: 99;
+    .drawer-wrapper {
+      @include transition(width, .3s);
+      height: 100%;
+      .drawer-menu {
+        @include transition(all, .35s);
+        padding: 1rem;
+        min-width: 3.5rem;
+        height: calc(100% - 3.75rem);
+        .banner {
+          height: 7.8125rem;
+          animation: anim-show .2s;
+          -webkit-animation: anim-show .2s;
+          animation-fill-mode: forwards;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .banner + .menu-wrapper {
+          padding: .5rem 0
+        }
+      }
+
+      &.collapse {
+        width: 3.5rem;
+      }
+
+      &:not(.collapse) {
+        width: 15.9375rem;
+      }
+    }
+
+    .route-wrapper {
+      @include auto-full;
+      background-color: $white-base;
+      z-index: 1;
+      padding: 1.25rem 0 0 2.875rem;
+    }
+  }
+}
+
+.collapse {
+  .logo {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    margin: 0 !important;
+  }
+  .drawer-menu {
+    padding: 0 !important;
+    .banner {
+      animation: anim-hide .2s !important;
+      -webkit-animation: anim-hide .2s !important;
+      animation-fill-mode: forwards !important;
+    }
+    .menu-wrapper {
+      &.vertical {
+        padding: 0 !important;
+        .menu-item {
+          &.divider {
+            height: 1px !important;
+          }
+          .title {
+            opacity: 0 !important;
+            width: 0;
+          }
+          .badge {
+            position: absolute;
+            right: .5rem;
+            top: -.25rem;
+            &.dot {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .profile-wrapper {
+    width: 3.5rem !important;
+    .title {
+      opacity: 0 !important;
+      width: 0;
+    }
+  }
+}
+
+.login {
+  height: 100%;
+  @include fv;
+  @include fh-s;
+  @include fv-stretch;
+  .login-nav-wrapper {
+    height: 7.5rem;
+    text-align: center;
+    background-color: $white-base;
+    .nav {
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+      position: relative;
+      max-width: 74rem !important;
+      height: 100%;
+      margin: 0 auto;
+      .logo {
+        height: 3.5rem;
+      }
+    }
+  }
+  .login-content-wrapper {
+    height: 25rem;
+    background: linear-gradient(top, #88d7ff, #66ccff);
+    background: -webkit-linear-gradient(top, #88d7ff, #66ccff);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#88d7ff, endColorstr=#66ccff);
+    .content {
+      max-width: 74rem;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+      background-image: url(../static/img/login_01.png);
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 10;
+      .login-box {
+        position: absolute;
+        right: 3.5rem;
+        width: 21.875rem;
+        height: 18.75rem;
+        background-color: $white-base;
+        box-shadow: 0 4px 24px 2px rgba(88, 185, 225, 0.6);
+        border-radius: 0.375rem;
+        top: 50%;
+        margin-top: -9.375rem;
+        form {
+          margin: -1rem 1.875rem 0;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+          text-align: center;
+          margin: 1.875rem 0 2rem;
+          color: #777777;
+          font-weight: 500;
+        }
+
+        input {
+          width: 100% !important;
+          height: 2.5rem;
+          border-radius: 0.25rem;
+          background-color: $bg-color;
+          padding: .25rem;
+          margin: .25rem 0;
+        }
+
+        label {
+          font-size: .875rem;
+        }
+
+        button {
+          width: 8rem;
+          background-color: $primary-active;
+
+        }
+      }
+    }
+  }
+  .copyright-wrapper {
+    @include fv;
+    @include fh-c;
+    @include fv-c;
+    position: relative;
+    bottom: 0;
+    height: calc(100% - 32rem);
+    .copyright {
+      position: relative;
+      display: block;
+      color: #999999;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+  }
+}

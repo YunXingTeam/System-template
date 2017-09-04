@@ -3,7 +3,7 @@
     <ul class="menu">
       <m-menu-item :item="item" v-for="item,i in items" :key="i" @click.native="handleMenuItemClick(item)"
                    :active="isActive(item)" :route="item.route||item.group"
-                   @on-subItem-click="subItemClick" :showIcon="showIcon"></m-menu-item>
+                   @on-subItem-click="subItemClick" :showIcon="showIcon" v-if="isPermission(item)"></m-menu-item>
     </ul>
   </div>
 </template>
@@ -25,7 +25,8 @@
         default: 'vertical'
       },
       items: [Array, Object],
-      defaultActive: [String, Number]
+      defaultActive: [String, Number],
+      permission: [String, Array]
     },
     components: {
       MMenuItem
@@ -75,6 +76,20 @@
           return this.activeIndex.toString().indexOf(item.group) != -1;
         }
         return this.activeIndex.toString().indexOf(item.route) != -1;
+      },
+      isPermission(item){
+        if (item.permission == undefined) {
+          return true
+        }
+        if (typeof item.permission == 'object') {
+          for (let i in item.permission) {
+            if (this.permission.indexOf(item.permission[i]) != -1) {
+              return true
+            }
+          }
+        } else {
+          return this.permission.indexOf(item.permission) != -1
+        }
       }
     },
     watch: {

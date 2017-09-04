@@ -4,11 +4,9 @@
  */
 import Vue from 'vue'
 import * as Api from '../../api';
-import MenuData from '../../assets/menu'
+import MenuData from '../../../static/menu'
 
 const state = {
-  userId: 0,
-  user: {},
   drawer: {
     drawback: false,
   },
@@ -17,8 +15,6 @@ const state = {
 };
 
 const getters = {
-  userId: state => state.userId,
-  user: state => state.user,
   drawer: state => state.drawer,
   naveMenu: state => {
     return MenuData[0]
@@ -27,15 +23,6 @@ const getters = {
 };
 
 const mutations = {
-  setUserId(state, userID){
-    state.userId = userID;
-    Vue.utils.saveLocal(Api.YWID.signKey, Api.keys.USERID, userID ? userID : '')
-  },
-  setUser(state, user) {
-    user = Vue.utils.filterNull(user);
-    Vue.utils.saveLocal(Api.YWID.signKey, Api.keys.USER, user ? user : '');
-    state.user = user;
-  },
   toggleDrawer(state){
     state.drawer.drawback = !state.drawer.drawback;
   },

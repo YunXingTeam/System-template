@@ -1,0 +1,166 @@
+.echarts {
+  width: 100%;
+  height: 240px;
+}
+
+.ra {
+  border-radius: .5rem !important;
+}
+
+.rtl {
+  border-top-left-radius: .5rem !important;
+}
+
+.rtr {
+  border-top-right-radius: .5rem !important;
+}
+
+.rbl {
+  border-bottom-left-radius: .5rem !important;
+}
+
+.rbr {
+  border-bottom-right-radius: .5rem !important;
+}
+
+.ba {
+  border: 1px solid $base-line-color !important;;
+  margin: -1px 0 !important;;
+}
+
+.bl {
+  border-left: 1px solid $base-line-color !important;
+}
+
+.bt {
+  border-top: 1px solid $base-line-color !important;
+}
+
+.br {
+  border-right: 1px solid $base-line-color !important;
+}
+
+.bb {
+  border-bottom: 1px solid $base-line-color !important;
+}
+
+.pa {
+  padding: 10px !important;
+}
+
+.pl {
+  padding-left: 10px !important;
+}
+
+.pt {
+  padding-top: 10px !important;
+}
+
+.pr {
+  padding-right: 10px !important;
+}
+
+.pb {
+  padding-bottom: 10px !important;
+}
+
+.no-b {
+  &:before {
+    border: none !important;
+  }
+  &:after {
+    border: none !important;
+  }
+  *:not(.vue-audio-wrapper) {
+    &:before {
+      border: none !important;
+    }
+    &:after {
+      border: none !important;
+    }
+  }
+}
+
+.no-pl {
+  padding-left: 0 !important;
+}
+
+.no-pt {
+  padding-top: 0 !important;
+}
+
+.no-pr {
+  padding-right: 0 !important;
+}
+
+.no-pb {
+  padding-bottom: 0 !important;
+}
+
+.no-ml {
+  margin-left: 0 !important;
+}
+
+.no-mt {
+  margin-top: 0 !important;
+}
+
+.no-mr {
+  margin-right: 0 !important;
+}
+
+.no-mb {
+  margin-bottom: 0 !important;
+}
+
+.no-bt {
+  border-top: none !important;
+}
+
+.no-br {
+  border-right: none !important;
+}
+
+.no-bb {
+  border-bottom: none !important;
+}
+
+.no-bl {
+  border-left: none !important;
+}
+
+.ma {
+  margin: 10px !important;
+}
+
+.ml {
+  margin-left: 10px !important;
+}
+
+.mt {
+  margin-top: 10px !important;
+}
+
+.mr {
+  margin-right: 10px !important;
+}
+
+.mb {
+  margin-bottom: 10px !important;
+}
+
+.sa {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.sb {
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, .1);
+}
+
+.router {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

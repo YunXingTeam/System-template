@@ -8,7 +8,7 @@
       <icon :name="'bars'" slot="hamburger" @click.native="toggle"></icon>
       <m-menu slot="nav-menu" :mode="'horizontal'" :items="naveMenu.data"
               :defaultActive="naveMenu.default"
-              :showIcon="false" @on-menu-selected="navChange">
+              :showIcon="false" @on-menu-selected="navChange" :permission="permission">
       </m-menu>
       <img slot="avatar" v-lazy=""/>
     </nav-bar>
@@ -18,7 +18,7 @@
           <img v-lazy=""/>
         </div>
         <m-menu slot="menu" :collapse="drawer.drawback" :items="menu.data"
-                :defaultActive="menu.default" @on-menu-selected="menuChange"></m-menu>
+                :defaultActive="menu.default" @on-menu-selected="menuChange" :permission="permission"></m-menu>
       </drawer>
       <route-container></route-container>
     </div>
@@ -27,6 +27,7 @@
 <script>
   import {NavBar, Drawer, RouteContainer} from '@/views/layout'
   import MMenu from '../../components/menu'
+  import {keys} from '../../api'
   import {mapGetters, mapMutations} from 'vuex'
   export default {
     name: 'main',
@@ -45,11 +46,11 @@
         this.updateMenu({navRoute});
       },
       menuChange(menuRoute){
-        this.$utils.toUrl(this, '/' + menuRoute)
+        Utils.toUrl(this, '/' + menuRoute)
       }
     },
     computed: {
-      ...mapGetters(['drawer', 'naveMenu', 'menu'])
+      ...mapGetters(['drawer', 'naveMenu', 'menu', 'permission']),
     }
   }
 </script>

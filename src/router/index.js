@@ -13,11 +13,12 @@ const router = new VueRouter({
   linkActiveClass: '',
   routes: [
     {
-      path: '/',
+      path: '/index',
       component: resolve => {
         require(['../views/layout/main'], resolve)
       },
       children: [
+        //数据统计
         {
           path: '/data-situation',  //tab1
           component: resolve => {
@@ -60,10 +61,98 @@ const router = new VueRouter({
             require(['../views/pages/sjtj/active-value'], resolve)
           }
         },
+        //转诊筛查
+        {
+          path: '/ref-management',  //tab1
+          component: resolve => {
+            require(['../views/pages/zzsc/ref-management'], resolve)
+          }
+        },
+        {
+          path: '/ref-person-details',  //tab1
+          component: resolve => {
+            require(['../views/pages/zzsc/ref-person-details'], resolve)
+          }
+        },
+        {
+          path: '/screening-mine',  //tab1
+          component: resolve => {
+            require(['../views/pages/zzsc/screening-mine'], resolve)
+          }
+        },
+        {
+          path: '/screening-sending',  //tab1
+          component: resolve => {
+            require(['../views/pages/zzsc/screening-sending'], resolve)
+          }
+        },
+        //app设置
+        {
+          path: '/audit-doctor',  //tab1
+          component: resolve => {
+            require(['../views/pages/app/audit-doctor'], resolve)
+          }
+        },
+        {
+          path: '/recommend',  //tab1
+          component: resolve => {
+            require(['../views/pages/app/recommend'], resolve)
+          }
+        },
+        {
+          path: '/tags-setting',  //tab1
+          component: resolve => {
+            require(['../views/pages/app/tags-setting'], resolve)
+          }
+        },
+        //财务
+        {
+          path: '/commission-setting',  //tab1
+          component: resolve => {
+            require(['../views/pages/cw/commission-setting'], resolve)
+          }
+        },
+        {
+          path: '/ref-adjust',  //tab1
+          component: resolve => {
+            require(['../views/pages/cw/ref-adjust'], resolve)
+          }
+        },
+        {
+          path: '/score-appropriation',  //tab1
+          component: resolve => {
+            require(['../views/pages/cw/score-appropriation'], resolve)
+          }
+        },
+        //人员管理
+        {
+          path: '/customer-management',  //tab1
+          component: resolve => {
+            require(['../views/pages/rygl/customer-management'], resolve)
+          }
+        },
+        {
+          path: '/group-management',  //tab1
+          component: resolve => {
+            require(['../views/pages/rygl/group-management'], resolve)
+          }
+        },
+        {
+          path: '/staff-management',  //tab1
+          component: resolve => {
+            require(['../views/pages/rygl/staff-management'], resolve)
+          }
+        },
       ]
     },
     {
-      path: '*', redirect: '/' //  初始化页面
+      path: '/login',  //登录
+      component: resolve => {
+        require(['../views/pages/login'], resolve)
+      }
+    },
+    {
+      path: '*', redirect: '/login' //  初始化页面
     }
   ]
 });
