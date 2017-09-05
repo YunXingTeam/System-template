@@ -49,7 +49,7 @@ const mutations = {
 const actions = {
   signIn({commit}, {jobNum, psw, callback}){
     let p = {
-      YWID: Api.YWID.signIn,
+      YWID: Api.YWID.account.signIn,
       userid: jobNum,
       password: psw
     }
@@ -64,6 +64,13 @@ const actions = {
         callback()
       }
     })
+  },
+  logout({commit}, callback){
+    commit('setUser');
+    commit('setUserId');
+    if (callback) {
+      callback()
+    }
   }
 };
 

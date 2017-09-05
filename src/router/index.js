@@ -8,7 +8,8 @@ Vue.use(VueRouter);
 //   this.isBack = true;
 //   window.history.go(count || -1);
 // };
-
+import Utils from '../utils'
+import {keys} from '../api'
 const router = new VueRouter({
   linkActiveClass: '',
   routes: [
@@ -107,9 +108,9 @@ const router = new VueRouter({
         },
         //财务
         {
-          path: '/commission-setting',  //tab1
+          path: '/percentage-setting',  //tab1
           component: resolve => {
-            require(['../views/pages/cw/commission-setting'], resolve)
+            require(['../views/pages/cw/percentage-setting'], resolve)
           }
         },
         {
@@ -152,7 +153,7 @@ const router = new VueRouter({
       }
     },
     {
-      path: '*', redirect: '/login' //  初始化页面
+      path: '*', redirect: Utils.loadLocal(keys.USERID) ? '/index' : '/login' //  初始化页面
     }
   ]
 });

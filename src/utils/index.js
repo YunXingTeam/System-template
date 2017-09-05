@@ -249,57 +249,40 @@ export default {
     }
     return '';
   },
-  hasClass(el, cls) {
-    if (!el || !cls) return false;
-    if (cls.indexOf(' ') !== -1) throw new Error('className should not contain space.');
-    if (el.classList) {
-      return el.classList.contains(cls);
-    } else {
-      return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
-    }
+  /** 获取年龄
+   *  @param {object} ctx 上下文
+   *  @param {string} title 提示标题
+   *  @param {string} msg 提示内容
+   *  @param {Number} dur 提示时间,0为不自动关闭
+   */
+  toast(ctx, title, msg, dur){
+    ctx.$notify.info({
+      title: title ? title : '提示',
+      message: msg,
+      duration: dur ? dur : 0
+    });
   },
-  /* istanbul ignore next */
-  addClass(el, cls) {
-    if (!el) return;
-    let curClass = el.className;
-    let classes = (cls || '').split(' ');
-
-    for (let i = 0, j = classes.length; i < j; i++) {
-      let clsName = classes[i];
-      if (!clsName) continue;
-
-      if (el.classList) {
-        el.classList.add(clsName);
-      } else {
-        if (!hasClass(el, clsName)) {
-          curClass += ' ' + clsName;
-        }
-      }
-    }
-    if (!el.classList) {
-      el.className = curClass;
-    }
+  warningToast(ctx, title, msg, dur){
+    ctx.$notify({
+      title: title ? title : '警告',
+      message: msg,
+      duration: dur ? dur : 0,
+      type: 'warning'
+    });
   },
-  /* istanbul ignore next */
-  removeClass(el, cls) {
-    if (!el || !cls) return;
-    let classes = cls.split(' ');
-    let curClass = ' ' + el.className + ' ';
-
-    for (let i = 0, j = classes.length; i < j; i++) {
-      let clsName = classes[i];
-      if (!clsName) continue;
-
-      if (el.classList) {
-        el.classList.remove(clsName);
-      } else {
-        if (hasClass(el, clsName)) {
-          curClass = curClass.replace(' ' + clsName + ' ', ' ');
-        }
-      }
-    }
-    if (!el.classList) {
-      el.className = trim(curClass);
-    }
+  successToast(ctx, title, msg, dur){
+    ctx.$notify({
+      title: title ? title : '成功',
+      message: msg,
+      duration: dur ? dur : 0,
+      type: 'success'
+    });
+  },
+  errorToast(ctx, title, msg, dur){
+    ctx.$notify.error({
+      title: title ? title : '错误',
+      message: msg,
+      duration: dur ? dur : 0
+    });
   },
 }

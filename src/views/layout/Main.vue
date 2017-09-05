@@ -10,7 +10,17 @@
               :defaultActive="naveMenu.default"
               :showIcon="false" @on-menu-selected="navChange" :permission="permission">
       </m-menu>
-      <img slot="avatar" v-lazy=""/>
+      <div slot="avatar">
+        <el-dropdown trigger="click" @command="handleCommand">
+          <el-button type="text" size="small">
+            <img v-lazy=""/>
+          </el-button>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>修改密码</el-dropdown-item>
+            <el-dropdown-item command="logout">退出登录</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </nav-bar>
     <div class="main-container">
       <drawer :collapse="drawer.drawback">
@@ -28,7 +38,7 @@
   import {NavBar, Drawer, RouteContainer} from '@/views/layout'
   import MMenu from '../../components/menu'
   import {keys} from '../../api'
-  import {mapGetters, mapMutations} from 'vuex'
+  import {mapGetters, mapMutations, mapActions} from 'vuex'
   export default {
     name: 'main',
     components: {
@@ -39,6 +49,7 @@
     },
     methods: {
       ...mapMutations(['toggleDrawer', 'updateMenu']),
+      ...mapActions(['logout']),
       toggle(){
         this.toggleDrawer()
       },
@@ -47,6 +58,16 @@
       },
       menuChange(menuRoute){
         Utils.toUrl(this, '/' + menuRoute)
+      },
+      handleCommand(command){
+        let ctx = this;
+        switch (command) {
+          case 'logout':
+            ctx.logout(function () {
+              Utils.toUrl(ctx, '/login')
+            });
+            break
+        }
       }
     },
     computed: {
