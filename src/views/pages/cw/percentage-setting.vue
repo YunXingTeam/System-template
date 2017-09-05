@@ -130,37 +130,21 @@
             let mztcbl = item.ysmztcbl / 100.0,
               zytcbl = item.yszytcbl / 100.0;
             if (Number(mztcbl) > Number(item.cymzzdtcbl) || Number(zytcbl) > Number(item.cyzyzdtcbl)) {
-              ctx.$notify({
-                title: '提示',
-                message: '医生的提成比例不能超过上限',
-                duration: 0
-              });
+              Utils.warningToast(ctx, null, '医生的提成比例不能超过上限');
               return;
             }
             if (Number(mztcbl) < 0 || Number(zytcbl) < 0) {
-              ctx.$notify({
-                title: '提示',
-                message: '医生的提成比例不能小于0',
-                duration: 0
-              });
+              Utils.warningToast(ctx, null, '医生的提成比例不能小于0');
               return;
             }
             break;
           case '2':
             if (Number(item.ptcymztcbl) > Number(item.jgptmztcbl) || Number(item.ptcyzytcbl) > Number(item.jgptzytcbl)) {
-              ctx.$notify({
-                title: '提示',
-                message: '平台—医生设置的提成比例不能大于机构—平台的比例',
-                duration: 0
-              });
+              Utils.warningToast(ctx, null, '平台—医生设置的提成比例不能大于机构—平台的比例');
               return;
             }
             if (Number(item.ptcymztcbl) < 0 || Number(item.ptcyzytcbl) < 0) {
-              ctx.$notify({
-                title: '提示',
-                message: '平台—医生的提成比例不能小于0',
-                duration: 0
-              });
+              Utils.warningToast(ctx, null, '平台—医生的提成比例不能小于0');
               return;
             }
             break;

@@ -241,3 +241,22 @@
     }
   }
 }
+
+.head-bar {
+  @include fh;
+  @include fh-s;
+  @include fv-c;
+  border-bottom: 1px $base-line-color;
+  &.line {
+    border-bottom-style: solid;
+  }
+  &.dashed{
+    border-bottom-style: dashed;
+  }
+  margin-bottom: 10px;
+  label {
+    @include auto-full;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+  }
+}

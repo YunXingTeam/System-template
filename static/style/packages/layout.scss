@@ -4,6 +4,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  overflow-x: hidden;
   @include clearfix;
   @include fv;
   @include fh-s;
@@ -82,9 +83,11 @@
         height: 2.5rem;
         border-radius: 50%;
       }
+      button {
+        padding: 0;
+      }
     }
   }
-
   .main-container {
     @include fh;
     @include fh-s;
@@ -97,7 +100,7 @@
       .drawer-menu {
         @include transition(all, .35s);
         padding: 1rem;
-        min-width: 3.5rem;
+        width: 15.9375rem;
         height: calc(100% - 3.75rem);
         .banner {
           height: 7.8125rem;
@@ -123,12 +126,11 @@
         width: 15.9375rem;
       }
     }
-
     .route-wrapper {
       @include auto-full;
       background-color: $white-base;
       z-index: 1;
-      padding: 1.25rem 0 0 2.875rem;
+      padding: 1.25rem 2.875rem 0;
     }
   }
 }

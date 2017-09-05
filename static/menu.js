@@ -59,18 +59,18 @@ export const menu_app = {
 };
 
 export const menu_cw = {
-  default: "audit-doctor",
+  default: "ref-adjust",
   data: [
     {title: "转诊核算", route: "ref-adjust"},
     "divider",
     {title: "积分拨付", route: "score-appropriation"},
     "divider",
-    {title: "提成设置", route: "commission-setting", permission: 4},
+    {title: "提成设置", route: "percentage-setting", permission: 4},
   ]
 };
 
 export const menu_rygl = {
-  default: "audit-doctor",
+  default: "staff-management",
   data: [
     {title: "员工管理", route: "staff-management", permission: 1},
     "divider",

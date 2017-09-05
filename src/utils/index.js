@@ -249,7 +249,7 @@ export default {
     }
     return '';
   },
-  /** 获取年龄
+  /** 提示
    *  @param {object} ctx 上下文
    *  @param {string} title 提示标题
    *  @param {string} msg 提示内容

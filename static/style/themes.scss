@@ -164,3 +164,68 @@
   right: 0;
   bottom: 0;
 }
+
+.horizontal-bar {
+  @include fh;
+  @include fh-s;
+  @include fv-c;
+  .item {
+    @include fh;
+    @include fh-s;
+    @include fv-c;
+  }
+}
+
+.el-tabs {
+  .el-tabs__header {
+    border-bottom: 1px solid $primary-active;
+  }
+  .el-tabs__active-bar {
+    background-color: $primary-active;
+  }
+  .el-tabs__item {
+    border: none !important;
+    &.is-active {
+      background-color: $primary-active;
+      color: $white-base;
+    }
+  }
+}
+
+.el-table {
+  .cell {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+  th {
+    background-color: #F9FBFB;
+    .cell {
+      background-color: transparent;
+      color: #999;
+    }
+  }
+  td {
+    .cell {
+      @include fh;
+      @include fh-s;
+      @include fv-c;
+      line-height: 1.75rem;
+      min-height: 3rem;
+      .horizontal-bar {
+        input {
+          border: none !important;
+          width: 2.5rem;
+          padding-left: 3px;
+        }
+        .warn {
+          color: $red-drak;
+        }
+      }
+      .el-select {
+        .el-input__inner, .el-input {
+          height: 2rem !important;
+        }
+      }
+    }
+  }
+}
